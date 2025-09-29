@@ -3,7 +3,7 @@ version: '3.8'
 services:
   laravel:
     image: php:8.3-apache
-    container_name: laravel
+    container_name: laravel_beeout
     ports:
       - "8000:80"
     volumes:
@@ -17,7 +17,7 @@ services:
 
   angular:
     image: node:22.12
-    container_name: angular
+    container_name: angular_beeout
     ports:
       - "4200:4200"
     volumes:
@@ -29,7 +29,7 @@ services:
 
   mysql:
     image: mysql:8.0
-    container_name: mysql
+    container_name: mysql_beeout
     restart: always
     environment:
       MYSQL_DATABASE: ${MYSQL_DATABASE:-beeout_db}
@@ -48,7 +48,7 @@ services:
     ports:
       - "8080:80"
     environment:
-      PMA_HOST: ${PMA_HOST:-mysql}
+      PMA_HOST: ${PMA_HOST:-mysql_beeout}
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-rootpassword}
     depends_on:
       - mysql
