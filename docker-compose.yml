@@ -1,11 +1,10 @@
-version: '3.8'
-
+# Rimuovi la linea version: '3.8', non serve più con le versioni recenti di docker-compose
 services:
   laravel:
     image: php:8.3-apache
-    container_name: laravel_beeout
+    container_name: laravel_beeout   # Nome del container
     ports:
-      - "8000:80"
+      - "8000:80"                    # Porta esposta sul PC host
     volumes:
       - ./backend:/var/www/html
     working_dir: /var/www/html
@@ -43,12 +42,12 @@ services:
 
   phpmyadmin:
     image: phpmyadmin/phpmyadmin
-    container_name: phpmyadmin
+    container_name: phpmyadmin_beeout
     restart: always
     ports:
       - "8080:80"
     environment:
-      PMA_HOST: ${PMA_HOST:-mysql_beeout}
+      PMA_HOST: mysql
       MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-rootpassword}
     depends_on:
       - mysql
