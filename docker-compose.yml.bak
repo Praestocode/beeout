@@ -1,10 +1,10 @@
 # Rimuovi la linea version: '3.8', non serve più con le versioni recenti di docker-compose
 services:
   laravel:
-    build: .
-    container_name: laravel_beeout
+    image: php:8.3-apache
+    container_name: laravel_beeout   # Nome del container
     ports:
-      - "8000:8000"
+      - "8000:8000"                    # Porta esposta sul PC host
     volumes:
       - ./backend:/var/www/html
     working_dir: /var/www/html
