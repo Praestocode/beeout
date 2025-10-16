@@ -1,0 +1,56 @@
+services:
+  laravel:
+    build: .
+    container_name: laravel_beeout
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./backend:/var/www/html
+    working_dir: /var/www/html
+    environment:
+      COMPOSER_ALLOW_SUPERUSER: 1
+    command: php artisan serve --host=0.0.0.0 --port=8000
+    depends_on:
+      - mysql
+
+  angular:
+    image: node:22.12
+    container_name: angular_beeout
+    ports:
+      - "4200:4200"
+    volumes:
+      - ./frontend:/app
+    working_dir: /app
+    command: bash -c "npm install && npm run start"
+    depends_on:
+      - laravel
+
+
+  mysql:
+    image: mysql:8.0
+    container_name: mysql_beeout
+    restart: always
+    environment:
+      MYSQL_DATABASE: ${MYSQL_DATABASE:-beeout_db}
+      MYSQL_USER: ${MYSQL_USER:-user}
+      MYSQL_PASSWORD: ${MYSQL_PASSWORD:-password}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-rootpassword}
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin_beeout
+    restart: always
+    ports:
+      - "8080:80"
+    environment:
+      PMA_HOST: ${PMA_HOST:-mysql}
+      MYSQL_ROOT_PASSWORD: ${MYSQL_ROOT_PASSWORD:-rootpassword}
+    depends_on:
+      - mysql
+
+volumes:
+  mysql_data:

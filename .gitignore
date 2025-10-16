@@ -1,0 +1,25 @@
+# Node
+node_modules/
+dist/
+
+# Angular build
+/.angular/cache
+
+# Laravel
+/vendor
+/storage/*.key
+
+# Env files
+.env
+.env.local
+.env.*.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+laravel.log
+
+# Laravel files
+/backend/database/seeders/UserSeeder.php
+/backend/database/migrations/2025_10_02_152554_create_users_table.php

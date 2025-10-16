@@ -1,0 +1,29 @@
+Beeout – Code Ownership Transfer / Cessione dei Diritti del Codice
+
+---
+
+ITALIANO
+
+Il sottoscritto Praestocode dichiara di trasferire a Luca De Angelis tutti i diritti, titoli e interessi relativi al codice sorgente, alla documentazione e a qualsiasi altro materiale sviluppato fino ad oggi nel progetto "Beeout".  
+Ciò include il backend parziale sviluppato (CRUD per Places, autenticazione User con Sanctum) e qualsiasi configurazione o file correlato fornito fino ad ora.  
+
+Con la presente, Luca De Angelis acquisisce il diritto esclusivo di usare, modificare, distribuire o vendere il progetto Beeout senza alcuna limitazione o obbligo nei confronti del sottoscritto.
+
+Tutte le responsabilità relative all’uso futuro del codice ricadono su Luca De Angelis.
+
+Data: 16/10/2025  
+Firma: Praestocode
+
+---
+
+ENGLISH
+
+The undersigned Praestocode hereby transfers to Luca De Angelis all rights, title, and interest in the source code, documentation, and any other materials developed to date in the "Beeout" project.  
+This includes the partially developed backend (CRUD for Places, User authentication with Sanctum) and any related configuration or files provided so far.  
+
+By this agreement, Luca De Angelis obtains the exclusive right to use, modify, distribute, or sell the Beeout project without any limitation or obligation to the undersigned.
+
+All responsibility for the future use of the code rests with Luca De Angelis.
+
+Date: 16/10/2025  
+Signature: Praestocode
