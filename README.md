@@ -13,13 +13,13 @@ Fornisce informazioni in tempo reale sui locali, tra cui orari di apertura, posi
 - Frontend: Angular 17 con SSR (non sviluppato)
 - Mobile: Ionic + Capacitor (non sviluppato)
 - Database: MySQL (dockerizzato)
-- Autenticazione: Laravel Sanctum (cookie-based per SSR e token-based per SPA/mobile)
+- Autenticazione: Laravel Sanctum (basata su token per SPA/mobile; login web con cookie non ancora implementato)
 - Containerizzazione: Docker & Docker Compose
 - UI/Stilizzazione: Tailwind CSS (Bootstrap fallback)
 
 ### 4. Backend Features
 - CRUD per `Places`
-- Autenticazione `User` con Sanctum (SSR cookie-based / SPA token-based)
+- Autenticazione User con Sanctum (token-based per SPA/mobile; login web con cookie non ancora implementato)
 - Rotte API versionate sotto `/api/v1`
 - Validazione input tramite classi `FormRequest`
 
@@ -44,11 +44,23 @@ It provides real-time information about places, including opening hours, locatio
 - Frontend: Angular 17 with SSR (not developed)
 - Mobile: Ionic + Capacitor (not developed)
 - Database: MySQL (dockerized)
-- Authentication: Laravel Sanctum (SSR cookie-based / SPA token-based)
+- Authentication: Laravel Sanctum (token-based for SPA/mobile; web login via cookie not yet implemented)
 - Containerization: Docker & Docker Compose
 - UI/Styling: Tailwind CSS (Bootstrap fallback)
 
-### 3. Project Structure
+### 3. Backend Features
+- CRUD for `Places`
+- - `User` authentication with Sanctum (token-based for SPA/mobile; web login via cookie not yet implemented)
+- API routes versioned under `/api/v1`
+- Input validation via `FormRequest` classes
+
+### 4. Frontend Features
+**Not developed** – planned map-based interface with filters for time slots and venue descriptions.
+
+### 5. Mobile App
+**Not developed** – planned conversion of Angular frontend to mobile app using Ionic + Capacitor.
+
+### 6. Project Structure
 
 ```text
 beeout/
@@ -77,15 +89,3 @@ beeout/
 ├── Dockerfile
 └── README.md
 ```text
-
-### 4. Backend Features
-- CRUD for `Places`
-- `User` authentication with Sanctum (SSR cookie-based / SPA token-based)
-- API routes versioned under `/api/v1`
-- Input validation via `FormRequest` classes
-
-### 5. Frontend Features
-**Not developed** – planned map-based interface with filters for time slots and venue descriptions.
-
-### 6. Mobile App
-**Not developed** – planned conversion of Angular frontend to mobile app using Ionic + Capacitor.
