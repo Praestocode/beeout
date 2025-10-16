@@ -88,4 +88,3 @@ beeout/
 ├── docker-compose.yml
 ├── Dockerfile
 └── README.md
-```text
